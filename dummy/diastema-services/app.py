@@ -75,7 +75,7 @@ def data_cleaning():
     print("[INFO] Cleaning Done")
     return Response(status=200, mimetype='application/json')
 
-@app.route("/data-extractor", methods=["POST"])
+@app.route("/data-ingesting", methods=["POST"])
 def data_extractor():
     json_body = request.json
     print("[INFO] Extracting data")
@@ -126,7 +126,7 @@ def data_cleaning_progress():
     else:
         return "complete"
 
-@app.route("/data-extractor/progress", methods=["GET"])
+@app.route("/data-ingesting/progress", methods=["GET"])
 def data_extractor_progress():
     id = request.args.get('id')
     print("[INFO] The Extracting id is -->"+str(id))

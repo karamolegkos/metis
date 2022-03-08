@@ -11,10 +11,10 @@ def data_sink(playbook, job, last_bucket):
 
     # Start Sink Service
     service_obj = Diastema_Service()
-    service_obj.startService("data-sending", form_data)
+    ##service_obj.startService("data-sending", form_data)
 
     # Wait for Sink sending to End
-    service_obj.waitForService("data-sending", job["id"])
+    ##service_obj.waitForService("data-sending", job["id"])
 
     # Contact front end
     front_obj = FrontEnd_Class()

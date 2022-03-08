@@ -29,10 +29,10 @@ def data_ingestion(playbook, job):
 
     # Start Loading Service
     service_obj = Diastema_Service()
-    service_obj.startService("data-extractor", extracting_info)
+    service_obj.startService("data-ingesting", extracting_info)
 
     # Wait for loading to End
-    service_obj.waitForService("data-extractor", job["id"])
+    service_obj.waitForService("data-ingesting", job["id"])
 
     # Insert the raw and loaded data in MongoDB
     data_load_job_record = {"minio-path":load_bucket, "directory-kind":"raw-data", "job-json":job}
